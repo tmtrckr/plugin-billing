@@ -82,18 +82,18 @@ jobs:
         shell: bash
         run: |
           mkdir -p release
-          # Copy plugin manifest (from any artifact)
-          for dir in artifacts/*/; do
-            if [ -f "$dir/plugin.toml" ]; then
-              cp "$dir/plugin.toml" release/
-              break
-            fi
-          done
+          cp plugin.toml release/
           # Copy backend libraries
           for dir in artifacts/*/; do
             cp "$dir"/*.dll "$dir"/*.so "$dir"/*.dylib release/ 2>/dev/null || true
           done
-          # Create zip archive
+          # Copy frontend bundle (from any artifact directory)
+          for dir in artifacts/*/; do
+            if [ -d "$dir/frontend" ]; then
+              cp -r "$dir/frontend" release/ 2>/dev/null || true
+              break
+            fi
+          done
           cd release
           zip -r ../billing-plugin-${{ github.ref_name }}.zip .
           cd ..

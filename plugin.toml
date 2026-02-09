@@ -9,8 +9,8 @@ author = "TimeTracker"
 library_name = "billing_plugin"
 
 [frontend]
-entry = "billing/index.js"
-components = ["BillingDashboard", "BillingSettings"]
+entry = "frontend/index.js"
+components = ["BillableWidget"]
 
 [build]
 targets = ["x86_64-pc-windows-msvc", "x86_64-unknown-linux-gnu", "x86_64-apple-darwin"]
