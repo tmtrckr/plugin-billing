@@ -1,0 +1,44 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+
+# Cargo
+Cargo.lock
+
+# IDE
+.specstory/**
+.cursor*
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+*.dll
+*.so
+*.dylib
+*.exe
+
+# Debug files
+*.dSYM/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Frontend (if added later)
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

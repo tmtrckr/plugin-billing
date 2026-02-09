@@ -1,14 +1,12 @@
 [plugin]
-id = "billing-plugin"
-name = "Billing"
+name = "billing-plugin"
+display_name = "Billing"
 version = "1.0.0"
 description = "Billable time tracking"
 author = "TimeTracker"
 
 [backend]
-crate_name = "time_tracker_billing_plugin"
 library_name = "billing_plugin"
-entry_point = "_plugin_create"
 
 [frontend]
 entry = "billing/index.js"
